@@ -6,7 +6,6 @@ import QtQuick.Controls.Basic
 
 Window {
     id: root
-    readonly property double factor: 1e10
 
     width: 700
     height: 700
@@ -23,7 +22,7 @@ Window {
         id: runningTimer
         running: false
         repeat: true
-        interval: 100
+        interval: 17
         onTriggered: {
             nbodies.step();
             scatter.clear();
