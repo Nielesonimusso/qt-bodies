@@ -1,0 +1,6 @@
+module qt_bodies
+typeinfo appqt_bodies.qmltypes
+prefer :/qt/qml/qt_bodies/
+Main 254.0 Main.qml
+depends QtQuick
+

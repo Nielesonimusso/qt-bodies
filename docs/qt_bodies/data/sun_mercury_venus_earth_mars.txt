@@ -1,0 +1,7 @@
+# Sun, Mercury, Venus, Earth, Mars
+# name mass x y z vx vy vz radius
+Sun 1.9885e30 0 0 0 0 0 0 0 6.9634e8
+Mercury 3.3011e23 5.791e10 0 0 0 4.79e4 0 2.4397e6
+Venus 4.8675e24 1.082e11 0 0 0 3.5e4 0 6.0518e6
+Earth 5.9724e24 1.496e11 0 0 0 2.98e4 0 6.371e6
+Mars 6.4171e23 2.279e11 0 0 0 2.41e4 0 3.3895e6

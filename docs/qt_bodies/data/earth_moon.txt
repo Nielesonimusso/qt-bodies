@@ -1,0 +1,5 @@
+# Earth-Moon system configuration
+# Format: name mass x y z vx vy vz radius
+# Units: mass (kg), position (m), velocity (m/s), radius (m)
+Earth 5.972e24 0.0 0.0 0.0 0.0 0.0 0.0 6371000
+Moon 7.342e22 3.844e8 0.0 0.0 0.0 1022.0 0.0 1737000

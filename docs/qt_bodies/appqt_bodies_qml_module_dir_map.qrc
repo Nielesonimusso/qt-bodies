@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/qt/qml/qt_bodies">C:/Users/saxer/Projects/qt_bodies/qt_bodies/build/WebAssembly_Qt_6_10_1_single_threaded-Release/qt_bodies</file>
+
+  </qresource>
+</RCC>
