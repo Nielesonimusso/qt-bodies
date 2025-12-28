@@ -55,6 +55,7 @@ qt_add_qml_module(appqt_bodies
             bodyqml.h
         RESOURCES
             ${nbodies_DATA}
+            RESOURCES LICENSE
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
