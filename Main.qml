@@ -27,21 +27,29 @@ Window {
             nbodies.step();
             scatter.clear();
             for (var i = 0; i < nbodies.bodies.length; i++) {
-                scatter.append(Qt.point(nbodies.bodies[i].dx, nbodies.bodies[i].dy));
+                scatter.append(Qt.point(nbodies.bodies[i].x, nbodies.bodies[i].y));
             }
         }
     }
 
     GraphsView {
+        id: graphs
         anchors.fill: parent
 
+        property double maxRange: Math.max(nbodies.maxX, nbodies.maxY)
+        property double minRange: Math.min(nbodies.minX, nbodies.minY)
+
         axisX: ValueAxis {
-            min: -1.5
-            max: 1.5
+            titleText: "m"
+            labelFormat: "%.2e"
+            min: graphs.minRange - 0.1 * (graphs.maxRange - graphs.minRange)
+            max: graphs.maxRange + 0.1 * (graphs.maxRange - graphs.minRange)
         }
         axisY: ValueAxis {
-            min: -1.5
-            max: 1.5
+            titleText: "m"
+            labelFormat: "%.2e"
+            min: graphs.minRange - 0.1 * (graphs.maxRange - graphs.minRange)
+            max: graphs.maxRange + 0.1 * (graphs.maxRange - graphs.minRange)
         }
         ScatterSeries {
             id: scatter

@@ -56,6 +56,7 @@ qt_add_qml_module(appqt_bodies
         RESOURCES
             ${nbodies_DATA}
             RESOURCES LICENSE
+            RESOURCES copyifexists.cmake
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
@@ -78,4 +79,32 @@ install(TARGETS appqt_bodies
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+
+add_custom_command(TARGET appqt_bodies POST_BUILD
+    COMMAND ${CMAKE_COMMAND}
+        -DSRC="${CMAKE_BINARY_DIR}/appqt_bodies.html"
+        -DDST="${CMAKE_SOURCE_DIR}/docs"
+        -DNAME="index.html"
+        -P "${CMAKE_SOURCE_DIR}/copyifexists.cmake"
+    COMMAND ${CMAKE_COMMAND}
+        -DSRC="${CMAKE_BINARY_DIR}/appqt_bodies.js"
+        -DDST="${CMAKE_SOURCE_DIR}/docs"
+        -P "${CMAKE_SOURCE_DIR}/copyifexists.cmake"
+    COMMAND ${CMAKE_COMMAND}
+        -DSRC="${CMAKE_BINARY_DIR}/appqt_bodies.wasm"
+        -DDST="${CMAKE_SOURCE_DIR}/docs"
+        -P "${CMAKE_SOURCE_DIR}/copyifexists.cmake"
+    COMMAND ${CMAKE_COMMAND}
+        -DSRC="${CMAKE_BINARY_DIR}/qtloader.js"
+        -DDST="${CMAKE_SOURCE_DIR}/docs"
+        -P "${CMAKE_SOURCE_DIR}/copyifexists.cmake"
+    COMMAND ${CMAKE_COMMAND}
+        -DSRC="${CMAKE_BINARY_DIR}/qtlogo.svg"
+        -DDST="${CMAKE_SOURCE_DIR}/docs"
+        -P "${CMAKE_SOURCE_DIR}/copyifexists.cmake"
+    COMMAND ${CMAKE_COMMAND}
+        -DSRC="${CMAKE_BINARY_DIR}/qt_bodies"
+        -DDST="${CMAKE_SOURCE_DIR}/docs"
+        -P "${CMAKE_SOURCE_DIR}/copyifexists.cmake"
 )

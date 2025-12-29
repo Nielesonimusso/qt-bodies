@@ -1,0 +1,7 @@
+if(EXISTS "${SRC}")
+    file(COPY "${SRC}" DESTINATION "${DST}")
+    if(DEFINED NAME)
+        get_filename_component(fname "${SRC}" NAME)
+        file(RENAME "${DST}/${fname}" "${DST}/${NAME}")
+    endif()
+endif()
